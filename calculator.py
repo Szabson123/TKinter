@@ -15,21 +15,63 @@ def count(number):
     return sth
 
 
-def clear(first_number):
+def clear():
     e.delete(0, END)
+
+
+def equal():
+    second_number = e.get()
+    e.delete(0, END)
+    if math == "add":
+        e.insert(0, f_num + int(second_number))
+
+    if math == "divide":
+        if int(second_number) == 0:
+            e.insert(0, "You cant divide by 0")
+        else:
+            e.insert(0, f_num / int(second_number))
+
+    if math == "subtract":
+        e.insert(0, f_num - int(second_number))
+
+    if math == "multiply":
+        e.insert(0, f_num * int(second_number))
 
 
 def add():
     first_number = e.get()
     global f_num
+    global math
+    math = "add"
     f_num = int(first_number)
     e.delete(0, END)
 
 
-def equal():
-    secound_number = e.get()
+def divide():
+    first_number = e.get()
+    global f_num
+    global math
+    math = "divide"
+    f_num = int(first_number)
     e.delete(0, END)
-    e.insert(0, f_num + int(secound_number))
+
+
+def subtract():
+    first_number = e.get()
+    global f_num
+    global math
+    math = "subtract"
+    f_num = int(first_number)
+    e.delete(0, END)
+
+
+def multiply():
+    first_number = e.get()
+    global f_num
+    global math
+    math = "multiply"
+    f_num = int(first_number)
+    e.delete(0, END)
 
 
 button1 = Button(root, text="1", padx=40, pady=20, command=lambda: count(1))
@@ -43,8 +85,11 @@ button8 = Button(root, text="8", padx=40, pady=20, command=lambda: count(8))
 button9 = Button(root, text="9", padx=40, pady=20, command=lambda: count(9))
 buttonclear = Button(root, text="C", padx=87, pady=20, command=clear)
 button0 = Button(root, text="0", padx=40, pady=20, command=lambda: count(0))
-buttonadd = Button(root, text="+", padx=40, pady=20, command=add)
 buttoneven = Button(root, text="=", padx=87, pady=20, command=equal)
+buttonadd = Button(root, text="+", padx=40, pady=20, command=add)
+button_divide = Button(root, text="/", padx=40, pady=20, command=divide)
+button_subtract = Button(root, text="-", padx=40, pady=20, command=subtract)
+button_multiply = Button(root, text="*", padx=40, pady=20, command=multiply)
 
 button1.grid(row=2, column=0)
 button2.grid(row=2, column=1)
@@ -59,6 +104,9 @@ buttonclear.grid(row=5, column=1, columnspan=2)
 button0.grid(row=5, column=0)
 buttoneven.grid(row=6, column=1, columnspan=2)
 buttonadd.grid(row=6, column=0)
+button_divide.grid(row=7, column=0)
+button_subtract.grid(row=7, column=1)
+button_multiply.grid(row=7, column=2)
 
 
 root.mainloop()
