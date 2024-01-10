@@ -19,8 +19,11 @@ def story1():
 
     def close_window():
         newroot.destroy()
+
     def submit_story():
-        story_text = text(name_input.get(), enter_a_game_input.get(), enter_a_city_input.get(), player_input.get(), drink_input.get(), snack_input.get())
+        story_text = text(name_input.get(), enter_a_game_input.get(),
+                          enter_a_city_input.get(), player_input.get(),
+                          drink_input.get(), snack_input.get())
         story_label.config(text=story_text)
 
         for widget in input_widgets:
@@ -35,27 +38,27 @@ def story1():
                 
     name = Label(newroot, text='Name')
     name.grid(row=1, column=0)
-    name_input = Entry(newroot, text='')
+    name_input = Entry(newroot)
     name_input.grid(row=1, column=1, pady=10)
 
     enter_a_game = Label(newroot, text='Game')
     enter_a_game.grid(row=2, column=0)
-    enter_a_game_input = Entry(newroot, text='')
+    enter_a_game_input = Entry(newroot)
     enter_a_game_input.grid(row=2, column=1, pady=10)
             
     enter_a_city = Label(newroot, text='City')
     enter_a_city.grid(row=3, column=0)
-    enter_a_city_input = Entry(newroot, text='')
+    enter_a_city_input = Entry(newroot)
     enter_a_city_input.grid(row=3, column=1, pady=10)
 
     player = Label(newroot, text='Player')
     player.grid(row=4, column=0)
-    player_input = Entry(newroot, text='')
+    player_input = Entry(newroot)
     player_input.grid(row=4, column=1, pady=10)
             
     drink = Label(newroot, text='Drink')
     drink.grid(row=5, column=0)
-    drink_input = Entry(newroot, text='')
+    drink_input = Entry(newroot)
     drink_input.grid(row=5, column=1, pady=10)
             
     snack = Label(newroot, text='Snack')
@@ -83,4 +86,3 @@ button2 = Button(root, text='Ambitions', font=('Helvetica', 16), background='blu
 button2.grid(row=2, column=0, pady=(0, 100))
 
 root.mainloop()
-
