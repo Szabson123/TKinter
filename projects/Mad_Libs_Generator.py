@@ -85,4 +85,5 @@ button1.grid(row=1, column=0, pady=100)
 button2 = Button(root, text='Ambitions', font=('Helvetica', 16), background='blue')
 button2.grid(row=2, column=0, pady=(0, 100))
 
+root.update()
 root.mainloop()
