@@ -1,5 +1,6 @@
 from tkinter import *
 import time
+from world_clock import world_main
 
 root = Tk()
 root.title('Clock')
@@ -21,7 +22,7 @@ clock_label.grid(row=0, column=0, sticky="nsew", pady=40)
 root.grid_columnconfigure(0, weight=1)
 
 
-world_clock = Button(root, text='World Clocks', font=('Helvetica', 24), background='black', fg='yellowgreen')
+world_clock = Button(root, text='World Clocks', font=('Helvetica', 24), background='black', fg='yellowgreen', command=world_main)
 world_clock.grid(row=1, column=0, pady=10)
 
 timer = Button(root, text='Timer', font=('Helvetica', 24), background='black', fg='yellowgreen')
