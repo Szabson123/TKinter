@@ -2,10 +2,10 @@ from tkinter import *
 import time
 
 
-
 root = Tk()
 root.title('clocks')
 root.geometry('1600x400')
+
 
 def update():
     my_label.config(text='New Text')
@@ -24,6 +24,7 @@ def clock():
     
     my_label_two.config(text=f'{week_number}')
     my_label_two.after(1000, clock)
+
 
 my_label = Label(root, text='', font=('Helvetica', 48), fg='green', bg='black')
 my_label.pack(pady=20)

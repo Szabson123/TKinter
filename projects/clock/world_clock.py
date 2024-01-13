@@ -9,11 +9,17 @@ def world_main():
     worldRoot.title('World Clock')
     worldRoot.config(background='black')
     worldRoot.geometry('600x400')
-    timezone = 'Europe/London'
+    timezone_london = 'Europe/London'
+    timezone_warsaw = 'Europe/Warsaw'
+    timezone_seoul = 'Asia/Seoul'
     
     def get_time(timezone):
         london = datetime.now(pytz.timezone(timezone))
-        return london.strftime("%H:%M:%S")
+        warsaw = datetime.now(pytz.timezone(timezone))
+        seoul = datetime.now(pytz.timezone(timezone))
+        return london.strftime("%H:%M:%S"), seoul.strftime("%H:%M:%S"), warsaw.strftime("%H:%M:%S")
+
+
     
     def update_labels():
         london_label.config(text=get_time(timezone))
