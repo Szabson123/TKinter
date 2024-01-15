@@ -7,6 +7,7 @@ root.title('Clock')
 root.geometry('600x400')
 root.config(background='black')
 
+
 def clock():
     hour = time.strftime("%H")
     minute = time.strftime("%M")
@@ -32,8 +33,6 @@ alarm_clock = Button(root, text='Alarm Clock', font=('Helvetica', 24), backgroun
 alarm_clock.grid(row=3, column=0, pady=10)
 
 
-
 clock()
-
 
 root.mainloop()
